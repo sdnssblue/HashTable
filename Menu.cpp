@@ -20,7 +20,7 @@ string InputString(const char* text)
 	}
 }
 
-void ForShow(Element* element)
+void Show(Element* element)
 {
 	cout << "Key: " << "[" << element->Key << "]" << " - Value: " << "[" << element->Value << "]";
 }

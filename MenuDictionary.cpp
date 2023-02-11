@@ -21,8 +21,7 @@ void ShowDictionary(Dictionary* dictionary)
 
 		while (currentElement != nullptr)
 		{
-			//TODO: duplication
-			ForShow(currentElement);
+			Show(currentElement);
 			currentElement = currentElement->Next;
 			cout << endl;
 		}

@@ -5,7 +5,7 @@
 /// @return Возвращает строку.
 std::string InputString(const char* text);
 
-void ForShow(Element* element);
+void Show(Element* element);
 
 /// @brief Основное меню.
 int main();

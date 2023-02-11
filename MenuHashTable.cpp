@@ -19,15 +19,13 @@ void ShowHashTable(HashTable* table)
 		}
 		if (currentElement->Next == nullptr)
 		{
-			//TODO: duplication
-			ForShow(currentElement);
+			Show(currentElement);
 			cout << endl;
 			continue;
 		}
 		while (currentElement != nullptr)
 		{
-			//TODO: duplication
-			ForShow(currentElement);
+			Show(currentElement);
 			cout << " -> ";
 			currentElement = currentElement->Next;
 		}

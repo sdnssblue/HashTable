@@ -51,7 +51,7 @@ bool AddElement(HashTable* table, Element* element, int index)
 	{
 		ResolveCollisions(table->Array[index]->Head, element);
 	}
-	//TODO: const
+	table->Array[index]->Size++;
 	table->Count++;
 	int fullValue = table->Size * fillFactor;
 	if (table->Count == fullValue)
@@ -75,7 +75,7 @@ int HashFunction(string key, int tableSize)
 {
 	int size = key.length();
 	int hash = 0;
-	double A = 0.618033;
+
 	for (int i = 0; i < size; i++)
 	{
 		hash = (hash + key[i]) % tableSize;
@@ -163,23 +163,23 @@ bool RemoveElement(HashTable* table, string key)
 		}
 		else
 		{
-			Element* prevRemoveElement = table->Array[removeIndex]->Head;
+			Element* previousRemoveElement = table->Array[removeIndex]->Head;
 			int secondCount = 0;
 
-			while (prevRemoveElement->Next->Key != key)
+			while (previousRemoveElement->Next->Key != key)
 			{
 				secondCount++;
-				prevRemoveElement = prevRemoveElement->Next;
+				previousRemoveElement = previousRemoveElement->Next;
 			}
-			Element* deleteElement = prevRemoveElement->Next;
+			Element* deleteElement = previousRemoveElement->Next;
 
 			if (secondCount == table->Array[removeIndex]->Size - 2)
 			{
-				prevRemoveElement->Next = nullptr;
+				previousRemoveElement->Next = nullptr;
 			}
 			else
 			{
-				prevRemoveElement->Next = prevRemoveElement->Next->Next;
+				previousRemoveElement->Next = previousRemoveElement->Next->Next;
 			}
 			delete deleteElement;
 		}

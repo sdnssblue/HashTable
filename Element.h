@@ -5,10 +5,10 @@
 struct Element
 {
 	/// @brief Ключ.
-	string Key;
+	std::string Key;
 
 	/// @brief Значение.
-	string Value;
+	std::string Value;
 
 	/// @brief Указатель на следующий элемент.
 	Element* Next = nullptr;

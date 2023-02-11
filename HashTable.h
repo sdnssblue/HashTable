@@ -26,7 +26,7 @@ HashTable* InitHashTable(int size);
 /// @param key - Ключ.
 /// @param value - Значение.
 /// @return Возвращает элемент.
-Element* CreateElement(string key, string value);
+Element* CreateElement(std::string key, std::string value);
 
 /// @brief Добавление элемента в хеш-таблицу.
 /// @param table - Таблица.
@@ -51,13 +51,13 @@ int HashFunction(std::string key, int tableSize);
 /// @param key - Ключ.
 /// @param data - Значение.
 /// @return Возвращает true, если элемент найден, иначе false.
-bool FindElement(HashTable* table, string key, string& data);
+bool FindElement(HashTable* table, std::string key, std::string& data);
 
 /// @brief Удаляет элемент с заданным ключом.
 /// @param table - Таблица.
 /// @param key - Ключ.
 /// @return Возвращает true, если элемент был успешно удален, иначе false.
-bool RemoveElement(HashTable* table, string key);
+bool RemoveElement(HashTable* table, std::string key);
 
 /// @brief Удаляет хеш-таблицу.
 /// @param table - Таблица.
